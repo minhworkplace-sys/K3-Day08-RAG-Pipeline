@@ -35,7 +35,11 @@ import os
 from functools import lru_cache
 from pathlib import Path
 
-import chromadb
+try:
+    import chromadb
+except (ImportError, ModuleNotFoundError):
+    chromadb = None
+
 import requests
 from dotenv import load_dotenv
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -111,13 +115,17 @@ def embed_texts(texts: list[str], task: str) -> list[list[float]]:
 
 
 @lru_cache(maxsize=1)
-def get_chroma_client() -> chromadb.ClientAPI:
+def get_chroma_client():
+    if not chromadb:
+        return None
     CHROMA_DIR.mkdir(parents=True, exist_ok=True)
     return chromadb.PersistentClient(path=str(CHROMA_DIR))
 
 
 def get_collection():
     client = get_chroma_client()
+    if not client:
+        return None
     return client.get_or_create_collection(
         name=COLLECTION_NAME,
         metadata={"hnsw:space": "cosine"},
