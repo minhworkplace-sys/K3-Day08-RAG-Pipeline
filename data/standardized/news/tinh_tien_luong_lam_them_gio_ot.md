@@ -1,0 +1,19 @@
+# Hướng dẫn cách tính lương làm thêm giờ mới nhất
+
+**Source:** https://luatvietnam.vn/lao-dong-tien-luong/cach-tinh-luong-lam-them-gio-562-28124-article.html
+**Crawled:** 2026-08-04T10:37:54.717883
+
+---
+
+# Hướng dẫn cách tính lương làm thêm giờ mới nhất
+
+Khi dự án deadline gấp, lập trình viên thường xuyên phải OT. Việc nắm rõ cách tính tiền lương OT giúp bạn bảo vệ quyền lợi cá nhân.
+
+## 1. Mức lương OT ban ngày
+Theo **Điều 98 Bộ luật Lao động 2019**:
+- **OT ngày thường:** Ít nhất **150%** đơn giá tiền lương giờ tính theo ngày làm việc bình thường.
+- **OT ngày nghỉ hàng tuần (Thứ 7, Chủ nhật):** Ít nhất **200%** đơn giá tiền lương giờ.
+- **OT ngày lễ, Tết, ngày nghỉ có hưởng lương:** Ít nhất **300%** (chưa kể tiền lương ngày lễ, Tết đối với người lao động hưởng lương ngày).
+
+## 2. Mức lương OT ban đêm (từ 22h đêm đến 6h sáng)
+Theo **Điều 55 Nghị định 145/2020/NĐ-CP**, người lao động làm thêm giờ vào ban đêm ngoài mức hưởng OT ngày còn được trả thêm **20% đến 30%** tiền lương tính theo đơn giá tiền lương làm thêm giờ của ngày làm việc đó.
