@@ -1,0 +1,18 @@
+# Sa thải người lao động: Quy định điều kiện, thủ tục mới nhất
+
+**Source:** https://luatvietnam.vn/lao-dong-tien-luong/sa-thai-nguoi-lao-dong-564-90123-article.html
+**Crawled:** 2026-08-04T10:37:54.717883
+
+---
+
+# Sa thải người lao động: Quy định điều kiện, thủ tục mới nhất
+
+Rất nhiều người trẻ gặp trường hợp sếp hoặc nhân sự (HR) thông báo cho nghỉ việc đột xuất qua tin nhắn Zalo, Telegram hoặc tin nhắn điện thoại.
+
+## 1. Sa thải qua Zalo là HOÀN TOÀN TRÁI PHÁP LUẬT
+Căn cứ **Điều 125 và Điều 122 Bộ luật Lao động 2019**, kỷ luật sa thải chỉ được áp dụng khi người lao động có vi phạm nghiêm trọng (trộm cắp, tiết lộ bí mật kinh doanh, tự ý bỏ việc 5 ngày cộng dồn/tháng...) và phải trải qua quy trình xử lý kỷ luật lao động có lập biên bản, tổ chức cuộc họp xử lý có sự tham gia của đại diện Công đoàn.
+Văn bản sa thải phải ra quyết định bằng văn bản chính thức do người đại diện pháp luật ký tên đóng dấu. Thông báo đuổi việc qua Zalo là không có giá trị pháp lý.
+
+## 2. Đơn phương chấm dứt HĐLĐ trái pháp luật
+Nếu công ty cho nghỉ việc không có lý do chính đáng và không báo trước 30 ngày (đối với HĐLĐ xác định thời hạn 12-36 tháng) hoặc 45 ngày (đối với HĐLĐ không xác định thời hạn) theo **Điều 39 Bộ luật Lao động 2019**, đây là hành vi đơn phương chấm dứt hợp đồng trái pháp luật.
+Người lao động có quyền yêu cầu công ty nhận lại làm việc, bồi thường tiền lương những ngày không được làm việc cộng thêm **tối thiểu 02 tháng tiền lương** theo hợp đồng.
