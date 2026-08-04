@@ -77,33 +77,46 @@ def retrieve(
             'source': str  # 'hybrid' hoặc 'pageindex'
         }
     """
-    # TODO: Implement full retrieval pipeline
-    #
-    # Step 1: Song song chạy semantic + lexical
-    # dense_results = semantic_search(query, top_k=top_k * 2)
-    # sparse_results = lexical_search(query, top_k=top_k * 2)
-    #
-    # Step 2: Merge bằng RRF
-    # merged = rerank_rrf([dense_results, sparse_results], top_k=top_k * 2)
-    # for item in merged:
-    #     item["source"] = "hybrid"
-    #
-    # Step 3: Rerank
-    # if use_reranking and merged:
-    #     final_results = rerank(query, merged, top_k=top_k, method=RERANK_METHOD)
-    # else:
-    #     final_results = merged[:top_k]
-    #
-    # Step 4: Check threshold DÙNG ĐIỂM COSINE GỐC (dense_results), KHÔNG PHẢI RRF
-    # best_score = dense_results[0]["score"] if dense_results else 0.0
-    # if best_score < score_threshold:
-    #     print(f"  ⚠ Semantic best score ({best_score:.3f}) < threshold ({score_threshold})")
-    #     fallback = pageindex_search(query, top_k=top_k)
-    #     if fallback:
-    #         return fallback
-    #
-    # return final_results[:top_k]
-    raise NotImplementedError("Implement retrieve")
+    try:
+        dense_results = semantic_search(query, top_k=top_k * 2)
+    except Exception:
+        dense_results = []
+
+    try:
+        sparse_results = lexical_search(query, top_k=top_k * 2)
+    except Exception:
+        sparse_results = []
+
+    # Check threshold dựa trên điểm Cosine gốc của dense_results
+    best_score = dense_results[0].get("score", 0.0) if (dense_results and isinstance(dense_results[0], dict)) else 0.0
+    if best_score < score_threshold or not (dense_results or sparse_results):
+        fallback = pageindex_search(query, top_k=top_k)
+        if fallback:
+            for item in fallback:
+                item["source"] = "pageindex"
+            return fallback[:top_k]
+
+    # Merge bằng RRF
+    merged = rerank_rrf([dense_results, sparse_results], top_k=top_k * 2)
+    for item in merged:
+        item["source"] = "hybrid"
+
+    if use_reranking and merged:
+        final_results = rerank(query, merged, top_k=top_k, method=RERANK_METHOD)
+    else:
+        final_results = merged[:top_k]
+
+    for item in final_results:
+        item["source"] = "hybrid"
+
+    if not final_results:
+        fallback = pageindex_search(query, top_k=top_k)
+        if fallback:
+            for item in fallback:
+                item["source"] = "pageindex"
+            return fallback[:top_k]
+
+    return final_results[:top_k]
 
 
 if __name__ == "__main__":
@@ -119,4 +132,6 @@ if __name__ == "__main__":
         print("-" * 60)
         results = retrieve(q, top_k=3)
         for i, r in enumerate(results, 1):
-            print(f"  {i}. [{r['score']:.3f}] [{r['source']}] {r['content'][:80]}...")
+            print(f"  {i}. [{r['score']:.3f}] [{r.get('source')}] {r['content'][:80]}...")
+
+
