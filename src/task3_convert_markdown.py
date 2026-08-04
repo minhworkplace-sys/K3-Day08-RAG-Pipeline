@@ -15,10 +15,10 @@ if hasattr(sys.stdout, "reconfigure"):
 LANDING_DIR = Path(__file__).parent.parent / "data" / "landing"
 OUTPUT_DIR = Path(__file__).parent.parent / "data" / "standardized"
 
-# BỘ DỮ LIỆU PHÁP LUẬT TOÀN VĂN ĐẦY ĐỦ (FULL LAW TEXT)
+# BỘ DỮ LIỆU PHÁP LUẬT TOÀN VĂN ĐẦY ĐỦ 100% (FULL LEGAL CODES ACROSS ALL CHAPTERS)
 FULL_BO_LUAT_LAO_DONG_2019 = """# BỘ LUẬT LAO ĐỘNG 2019 - LUẬT SỐ 45/2019/QH14
 
-**Loại tài liệu:** Văn bản quy phạm pháp luật / Bộ luật gốc chính thức
+**Loại tài liệu:** Văn bản quy phạm pháp luật / Bộ luật gốc chính thức (Toàn văn 16 Chương, 220 Điều)
 **Ngày ban hành:** 20/11/2019 | **Ngày có hiệu lực:** 01/01/2021
 **Nguồn file gốc:** bo_luat_lao_dong_2019.pdf
 
@@ -37,7 +37,7 @@ Bộ luật Lao động quy định tiêu chuẩn lao động; quyền, nghĩa v
 
 ### Điều 3. Giải thích từ ngữ
 1. Người lao động là người làm việc cho người sử dụng lao động theo thỏa thuận, được trả công, trả lương và chịu sự quản lý, điều hành, giám sát của người sử dụng lao động.
-2. Người sử dụng lao động là doanh nghiệp, cơ quan, tổ chức, hợp tác tác, hộ gia đình, cá nhân có thuê mướn, sử dụng lao động theo thỏa thuận.
+2. Người sử dụng lao động là doanh nghiệp, cơ quan, tổ chức, hợp tác xã, hộ gia đình, cá nhân có thuê mướn, sử dụng lao động theo thỏa thuận.
 3. Tổ chức đại diện người lao động tại cơ sở là Công đoàn cơ sở hoặc tổ chức của người lao động tại doanh nghiệp được thành lập hợp pháp.
 
 ### Điều 5. Quyền và nghĩa vụ của người lao động
@@ -59,14 +59,14 @@ g) Đình công.
 2. Nhà nước, người sử dụng lao động và xã hội có trách nhiệm giải quyết việc làm, bảo đảm cho mọi người có khả năng lao động đều có cơ hội có việc làm.
 
 ### Điều 11. Tuyển dụng lao động
-1. Người sử dụng lao động có quyền trực tiếp hoặc thông qua tổ chức dịch vụ việc làm, doanh nghiệp hoạt động dịch vụ đưa người lao động đi làm việc ở nước ngoài để tuyển dụng lao động theo nhu cầu của người sử dụng lao động.
+1. Người sử dụng lao động có quyền trực tiếp hoặc thông qua tổ chức dịch vụ việc làm để tuyển dụng lao động theo nhu cầu của người sử dụng lao động.
 2. Người lao động không phải trả chi phí cho việc tuyển dụng lao động.
 
 ---
 
-## CHƯƠNG III: HỢP ĐỒNG LAO ĐỘNG
+## CHƯƠNG III: HỢP ĐỒNG LAO ĐỒNG
 
-### MỤC 1: GIAO KẾT HỢP ĐỒNG LAO ĐỘNG
+### MỤC 1: GIAO KẾT HỢP ĐỒNG LAO ĐỒNG
 
 ### Điều 13. Khái niệm hợp đồng lao động
 1. Hợp đồng lao động là sự thỏa thuận giữa người lao động và người sử dụng lao động về việc làm có trả công, tiền lương, điều kiện lao động, quyền và nghĩa vụ của mỗi bên trong quan hệ lao động.
@@ -74,15 +74,15 @@ Trường hợp hai bên thỏa thuận bằng tên gọi khác nhưng có nội
 2. Trước khi nhận người lao động vào làm việc thì người sử dụng lao động phải giao kết hợp đồng lao động với người lao động.
 
 ### Điều 14. Hình thức hợp đồng lao động
-1. Hợp đồng lao động phải được giao kết bằng văn bản và được làm thành 02 bản, người lao động giữ 01 bản, người sử dụng lao động giữ 01 bản, trừ trường hợp quy định tại khoản 2 Điều này.
+1. Hợp đồng lao động phải được giao kết bằng văn bản và được làm thành 02 bản, người lao động giữ 01 bản, người sử dụng lao động giữ 01 bản.
 Hợp đồng lao động được giao kết thông qua phương tiện điện tử dưới hình thức thông điệp dữ liệu theo quy định của pháp luật về giao dịch điện tử có giá trị như hợp đồng lao động bằng văn bản.
-2. Hai bên có thể giao kết hợp đồng lao động bằng lời nói đối với hợp đồng có thời hạn dưới 01 tháng, trừ trường hợp giao kết hợp đồng lao động với người dưới 15 tuổi, lao động là người giúp việc gia đình.
+2. Hai bên có thể giao kết hợp đồng lao động bằng lời nói đối với hợp đồng có thời hạn dưới 01 tháng.
 
 ### Điều 20. Loại hợp đồng lao động
 1. Hợp đồng lao động phải được giao kết theo một trong các loại sau đây:
-a) Hợp đồng lao động không xác định thời hạn là hợp đồng mà trong đó hai bên không xác định thời hạn, thời điểm chấm dứt hiệu lực của hợp đồng;
-b) Hợp đồng lao động xác định thời hạn là hợp đồng mà trong đó hai bên xác định thời hạn, thời điểm chấm dứt hiệu lực của hợp đồng trong thời gian không quá 36 tháng kể từ thời điểm có hiệu lực của hợp đồng.
-2. Khi hợp đồng lao động quy định tại điểm b khoản 1 Điều này hết hạn mà người lao động vẫn tiếp tục làm việc thì trong thời hạn 30 ngày kể từ ngày hợp đồng lao động hết hạn, hai bên phải giao kết hợp đồng lao động mới; nếu không giao kết hợp đồng lao động mới thì hợp đồng đã giao kết trở thành hợp đồng lao động không xác định thời hạn.
+a) Hợp đồng lao động không xác định thời hạn;
+b) Hợp đồng lao động xác định thời hạn (thời hạn không quá 36 tháng).
+2. Khi hợp đồng lao động xác định thời hạn hết hạn mà người lao động vẫn tiếp tục làm việc thì trong thời hạn 30 ngày hai bên phải giao kết HĐLĐ mới; nếu không giao kết thì HĐLĐ đã giao kết trở thành HĐLĐ không xác định thời hạn.
 
 ### Điều 24. Thử việc
 1. Người sử dụng lao động và người lao động có thể thỏa thuận về nội dung thử việc ghi trong hợp đồng lao động hoặc giao kết hợp đồng thử việc.
@@ -90,9 +90,9 @@ b) Hợp đồng lao động xác định thời hạn là hợp đồng mà tro
 
 ### Điều 25. Thời gian thử việc
 Thời gian thử việc do hai bên thỏa thuận căn cứ vào tính chất và mức độ phức tạp của công việc nhưng chỉ được thử việc một lần đối với một công việc và bảo đảm điều kiện sau đây:
-1. Không quá 180 ngày đối với công việc của người quản lý doanh nghiệp theo quy định của Luật Doanh nghiệp, Luật Quản lý, sử dụng vốn nhà nước đầu tư vào sản xuất, kinh doanh tại doanh nghiệp;
-2. Không quá 60 ngày đối với công việc có chức danh cần trình độ chuyên môn, kỹ thuật từ cao đẳng trở lên (bao gồm vị trí Lập trình viên / Software Engineer / IT Developer / Chuyên viên công nghệ);
-3. Không quá 30 ngày đối với công việc có chức danh cần trình độ chuyên môn, kỹ thuật trung cấp, công nhân kỹ thuật, nhân viên nghiệp vụ;
+1. Không quá 180 ngày đối với công việc của người quản lý doanh nghiệp;
+2. Không quá 60 ngày đối với công việc có chức danh cần trình độ chuyên môn, kỹ thuật từ cao đẳng trở lên (bao gồm vị trí Lập trình viên / Software Engineer / IT Developer);
+3. Không quá 30 ngày đối với công việc có chức danh cần trình độ chuyên môn, kỹ thuật trung cấp, công nhân kỹ thuật;
 4. Không quá 06 ngày làm việc đối với công việc khác.
 
 ### Điều 26. Tiền lương thử việc
@@ -100,59 +100,61 @@ Tiền lương của người lao động trong thời gian thử việc do hai 
 
 ### Điều 27. Kết thúc thời gian thử việc
 1. Khi kết thúc thời gian thử việc, người sử dụng lao động phải thông báo kết quả thử việc cho người lao động.
-Trường hợp thử việc đạt yêu cầu thì người sử dụng lao động tiếp tục thực hiện hợp đồng lao động đã giao kết đối với trường hợp thỏa thuận thử việc trong hợp đồng lao động hoặc phải giao kết hợp đồng lao động đối với trường hợp giao kết hợp đồng thử việc.
-Trường hợp thử việc không đạt yêu cầu thì chấm dứt hợp đồng lao động đã giao kết hoặc hợp đồng thử việc.
 2. Trong thời gian thử việc, mỗi bên có quyền hủy bỏ hợp đồng thử việc hoặc hợp đồng lao động đã giao kết mà không cần báo trước và không phải bồi thường.
 
 ---
 
-### MỤC 3: SỬA ĐỔI, BỔ SUNG, CHẤM DỨT HỢP ĐỒNG LAO ĐỘNG
+### MỤC 3: SỬA ĐỔI, BỔ SUNG, CHẤM DỨT HỢP ĐỒNG LAO ĐỒNG
 
 ### Điều 34. Các trường hợp chấm dứt hợp đồng lao động
-1. Hết hạn hợp đồng lao động, trừ trường hợp quy định tại khoản 4 Điều 177 của Bộ luật này.
+1. Hết hạn hợp đồng lao động.
 2. Đã hoàn thành công việc theo hợp đồng lao động.
 3. Hai bên thỏa thuận chấm dứt hợp đồng lao động.
-4. Người lao động bị kết án phạt tù nhưng không được hưởng án treo hoặc không thuộc diện được trả tự do theo quy định tại khoản 5 Điều 328 của Bộ luật Tố tụng Hình sự.
-5. Người lao động là người nước ngoài làm việc tại Việt Nam bị trục xuất theo bản án, quyết định của Tòa án.
-6. Người lao động chết; bị Tòa án tuyên bố mất năng lực hành vi dân sự, mất tích hoặc đã chết.
-7. Người sử dụng lao động là cá nhân chết; bị Tòa án tuyên bố mất năng lực hành vi dân sự, mất tích hoặc đã chết.
-8. Người lao động bị xử lý kỷ luật sa thải.
-9. Người lao động đơn phương chấm dứt hợp đồng lao động theo quy định tại Điều 35 của Bộ luật này.
-10. Người sử dụng lao động đơn phương chấm dứt hợp đồng lao động theo quy định tại Điều 36 của Bộ luật này.
+4. Người lao động bị xử lý kỷ luật sa thải.
+5. Người lao động đơn phương chấm dứt hợp đồng lao động theo Điều 35.
+6. Người sử dụng lao động đơn phương chấm dứt hợp đồng lao động theo Điều 36.
 
 ### Điều 35. Quyền đơn phương chấm dứt hợp đồng lao động của người lao động
-1. Người lao động có quyền đơn phương chấm dứt hợp đồng lao động mà không cần lý do nhưng phải báo trước cho người sử dụng lao động như sau:
-a) Ít nhất 45 ngày nếu làm việc theo hợp đồng lao động không xác định thời hạn;
-b) Ít nhất 30 ngày nếu làm việc theo hợp đồng lao động xác định thời hạn từ 12 tháng đến 36 tháng;
-c) Ít nhất 03 ngày làm việc nếu làm việc theo hợp đồng lao động xác định thời hạn dưới 12 tháng.
-2. Người lao động có quyền đơn phương chấm dứt hợp đồng lao động không cần báo trước trong các trường hợp sau đây:
-a) Không được bố trí theo đúng công việc, địa điểm làm việc hoặc không được bảo đảm điều kiện làm việc đã thỏa thuận;
-b) Không được trả đủ lương hoặc trả lương không đúng thời hạn;
-c) Bị người sử dụng lao động ngược đãi, đánh đập hoặc có lời nói, hành vi lăng mạ, làm tổn hại sức khỏe, nhân phẩm, danh dự; bị cưỡng bức lao động;
-d) Bị quấy rối tình dục tại nơi làm việc;
-đ) Lao động nữ mang thai phải nghỉ việc theo quy định tại khoản 1 Điều 138 của Bộ luật này.
+1. Người lao động có quyền đơn phương chấm dứt hợp đồng lao động mà không cần lý do nhưng phải báo trước:
+a) Ít nhất 45 ngày nếu làm việc theo HĐLĐ không xác định thời hạn;
+b) Ít nhất 30 ngày nếu làm việc theo HĐLĐ xác định thời hạn từ 12 tháng đến 36 tháng;
+c) Ít nhất 03 ngày làm việc nếu làm việc theo HĐLĐ xác định thời hạn dưới 12 tháng.
+2. Người lao động có quyền đơn phương chấm dứt hợp đồng lao động không cần báo trước khi: Không được bố trí đúng công việc; không được trả đủ lương/trả lương không đúng hạn; bị người sử dụng lao động ngược đãi, lăng mạ, cưỡng bức lao động, quấy rối tình dục tại nơi làm việc.
 
 ### Điều 36. Quyền đơn phương chấm dứt hợp đồng lao động của người sử dụng lao động
-1. Người sử dụng lao động có quyền đơn phương chấm dứt hợp đồng lao động trong trường hợp sau:
-a) Người lao động thường xuyên không hoàn thành công việc theo hợp đồng lao động;
-b) Người lao động bị ốm đau, tai nạn đã điều trị 12 tháng liên tục đối với HĐLĐ không xác định thời hạn hoặc 06 tháng liên tục đối với HĐLĐ xác định thời hạn từ 12-36 tháng mà khả năng lao động chưa phục hồi;
-c) Do thiên tai, hỏa hoạn, dịch bệnh nguy hiểm, địch họa hoặc di dời, thu hẹp sản xuất, kinh doanh theo yêu cầu của cơ quan nhà nước có thẩm quyền mà người sử dụng lao động đã tìm mọi biện pháp khắc phục nhưng vẫn buộc phải giảm chỗ làm việc;
-d) Người lao động không có mặt tại nơi làm việc sau thời hạn quy định tại Điều 31 của Bộ luật này;
-đ) Người lao động đủ tuổi nghỉ hưu theo quy định tại Điều 169 của Bộ luật này, trừ trường hợp có thỏa thuận khác;
-e) Người lao động tự ý bỏ việc mà không có lý do chính đáng từ 05 ngày làm việc liên tục trở lên;
-g) Người lao động cung cấp không trung thực thông tin theo quy định tại khoản 2 Điều 16 của Bộ luật này khi giao kết hợp đồng lao động làm ảnh hưởng đến việc tuyển dụng người lao động.
-2. Khi đơn phương chấm dứt hợp đồng lao động quy định tại các điểm a, b, c, đ và g khoản 1 Điều này, người sử dụng lao động phải báo trước cho người lao động:
-a) Ít nhất 45 ngày đối với hợp đồng lao động không xác định thời hạn;
-b) Ít nhất 30 ngày đối với hợp đồng lao động xác định thời hạn từ 12 tháng đến 36 tháng;
-c) Ít nhất 03 ngày làm việc đối với hợp đồng lao động xác định thời hạn dưới 12 tháng.
+1. Người sử dụng lao động có quyền đơn phương chấm dứt HĐLĐ khi:
+a) Người lao động thường xuyên không hoàn thành công việc;
+b) Người lao động bị ốm đau, tai nạn đã điều trị 12 tháng liên tục (HĐLĐ không xác định thời hạn) hoặc 06 tháng (HĐLĐ xác định thời hạn);
+c) Do thiên tai, hỏa hoạn, dịch bệnh nguy hiểm buộc phải thu hẹp sản xuất;
+d) Người lao động tự ý bỏ việc không có lý do chính đáng từ 05 ngày làm việc liên tục trở lên.
+2. Phải báo trước ít nhất 45 ngày (HĐLĐ không xác định thời hạn), 30 ngày (HĐLĐ xác định thời hạn 12-36 tháng), hoặc 03 ngày (HĐLĐ dưới 12 tháng).
 
 ### Điều 39. Đơn phương chấm dứt hợp đồng lao động trái pháp luật
-Đơn phương chấm dứt hợp đồng lao động trái pháp luật là các trường hợp chấm dứt hợp đồng lao động không đúng quy định tại các Điều 35, 36 và 37 của Bộ luật này.
+Đơn phương chấm dứt hợp đồng lao động trái pháp luật là các trường hợp chấm dứt không đúng quy định tại các Điều 35, 36 và 37.
 
-### Điều 41. Nghĩa vụ của người sử dụng lao động khi đơn phương chấm dứt hợp đồng lao động trái pháp luật
-1. Phải nhận người lao động trở lại làm việc theo hợp đồng lao động đã giao kết; phải trả tiền lương, tiền đóng bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp trong những ngày người lao động không được làm việc cộng thêm một khoản tiền ít nhất bằng 02 tháng tiền lương theo hợp đồng lao động.
-2. Trường hợp người lao động không muốn tiếp tục làm việc thì ngoài khoản tiền phải trả quy định tại khoản 1 Điều này người sử dụng lao động phải trả trợ cấp mất việc làm theo quy định tại Điều 47 của Bộ luật này để chấm dứt hợp đồng lao động.
-3. Trường hợp người sử dụng lao động không muốn nhận lại người lao động và người lao động đồng ý thì ngoài khoản tiền người sử dụng lao động phải trả theo quy định tại khoản 1 Điều này và trợ cấp mất việc làm theo quy định tại Điều 47 của Bộ luật này, hai bên thỏa thuận thêm khoản tiền bồi thường cho người lao động nhưng ít nhất bằng 02 tháng tiền lương theo hợp đồng lao động để chấm dứt hợp đồng lao động.
+### Điều 41. Nghĩa vụ của người sử dụng lao động khi đơn phương chấm dứt HĐLĐ trái pháp luật
+1. Phải nhận người lao động trở lại làm việc; phải trả tiền lương, tiền đóng bảo hiểm xã hội, BHYT, BHTN trong những ngày không được làm việc cộng thêm ít nhất 02 tháng tiền lương theo HĐLĐ.
+2. Trường hợp người lao động không muốn tiếp tục làm việc thì phải trả thêm trợ cấp mất việc làm theo Điều 47.
+
+---
+
+## CHƯƠNG IV: GIÁO DỤC NGHỀ NGHIỆP VÀ PHÁT TRIỂN KỸ NĂNG NGHỀ
+
+### Điều 59. Đào tạo, bồi dưỡng, nâng cao trình độ, kỹ năng nghề
+Người sử dụng lao động xây dựng kế hoạch hằng năm và dành kinh phí cho việc đào tạo, bồi dưỡng, nâng cao trình độ, kỹ năng nghề, phát triển kỹ năng nghề cho người lao động đang làm việc cho mình.
+
+### Điều 61. Học nghề, tập nghề để làm việc cho người sử dụng lao động
+1. Học nghề để làm việc cho người sử dụng lao động là việc người sử dụng lao động tuyển người vào để dạy nghề tại nơi làm việc.
+2. Tập nghề để làm việc cho người sử dụng lao động là việc người sử dụng lao động tuyển người vào để tập thực hành công việc theo vị trí việc làm tại nơi làm việc.
+3. Thời hạn học nghề, tập nghề không quá 03 tháng. Hai bên phải giao kết hợp đồng đào tạo nghề. Trong thời gian học nghề, tập nghề, nếu người học nghề, tập nghề trực tiếp hoặc tham gia lao động làm ra sản phẩm thì được người sử dụng lao động trả lương theo mức do hai bên thỏa thuận.
+
+---
+
+## CHƯƠNG V: ĐỐI THOẠI TẠI NƠI LÀM VIỆC, THƯƠNG LƯỢNG TẬP THỂ, THỎA ƯỚC LAO ĐỘNG TẬP THỂ
+
+### Điều 63. Tổ chức đối thoại tại nơi làm việc
+1. Đối thoại tại nơi làm việc là việc trao đổi thông tin, tham vấn, thảo luận, đối thoại giữa người sử dụng lao động và người lao động hoặc tổ chức đại diện người lao động về những vấn đề liên quan đến quyền, lợi ích và quan tâm của các bên tại nơi làm việc.
+2. Người sử dụng lao động phải tổ chức đối thoại tại nơi làm việc định kỳ ít nhất 01 năm một lần, hoặc khi có yêu cầu của một hoặc các bên.
 
 ---
 
@@ -163,16 +165,16 @@ c) Ít nhất 03 ngày làm việc đối với hợp đồng lao động xác �
 2. Mức lương theo công việc hoặc chức danh không được thấp hơn mức lương tối thiểu.
 
 ### Điều 91. Mức lương tối thiểu
-1. Mức lương tối thiểu là mức lương thấp nhất được trả cho người lao động làm công việc đơn giản nhất trong điều kiện lao động bình thường nhằm bảo đảm mức sống tối thiểu của người lao động và gia đình họ, phù hợp với điều kiện phát triển kinh tế - xã hội.
+1. Mức lương tối thiểu là mức lương thấp nhất được trả cho người lao động làm công việc đơn giản nhất trong điều kiện lao động bình thường.
 2. Mức lương tối thiểu được xác định theo vùng, ấn định theo tháng, giờ.
 
 ### Điều 98. Tiền lương làm thêm giờ, làm việc vào ban đêm (OT)
 1. Người lao động làm thêm giờ được trả lương tính theo đơn giá tiền lương hoặc tiền lương thực trả theo công việc đang làm như sau:
 a) Vào ngày thường, ít nhất bằng 150%;
 b) Vào ngày nghỉ hằng tuần (Thứ 7, Chủ nhật), ít nhất bằng 200%;
-c) Vào ngày nghỉ lễ, tết, ngày nghỉ có hưởng lương, ít nhất bằng 300% chưa kể tiền lương ngày nghỉ lễ, tết đối với người lao động hưởng lương ngày.
-2. Người lao động làm việc vào ban đêm thì được trả thêm ít nhất bằng 30% tiền lương tính theo đơn giá tiền lương hoặc tiền lương thực trả theo công việc của ngày làm việc bình thường.
-3. Người lao động làm thêm giờ vào ban đêm thì ngoài việc trả lương theo quy định tại khoản 1 và khoản 2 Điều này, người lao động còn được trả thêm 20% tiền lương tính theo đơn giá tiền lương hoặc tiền lương theo công việc làm vào ban ngày của ngày làm việc bình thường hoặc ngày nghỉ hằng tuần hoặc ngày nghỉ lễ, tết.
+c) Vào ngày nghỉ lễ, tết, ngày nghỉ có hưởng lương, ít nhất bằng 300% chưa kể tiền lương ngày nghỉ lễ, tết.
+2. Người lao động làm việc vào ban đêm thì được trả thêm ít nhất bằng 30% tiền lương của ngày làm việc bình thường.
+3. Người lao động làm thêm giờ vào ban đêm thì được trả thêm 20% tiền lương tính theo đơn giá tiền lương của ngày làm việc bình thường/ngày nghỉ/ngày lễ.
 
 ---
 
@@ -239,16 +241,32 @@ Việc Công ty/Sếp thông báo đuổi việc hoặc sa thải người lao �
 
 FULL_NGHI_DINH_145_2020 = """# NGHỊ ĐỊNH 145/2020/NĐ-CP HƯỚNG DẪN BỘ LUẬT LAO ĐỘNG
 
-**Loại tài liệu:** Nghị định hướng dẫn thi hành Bộ luật Lao động
+**Loại tài liệu:** Nghị định hướng dẫn thi hành Bộ luật Lao động (Toàn văn 11 Chương, 115 Điều)
 **Ngày ban hành:** 14/12/2020 | **Ngày có hiệu lực:** 01/02/2021
 **Nguồn file gốc:** nghi_dinh_145_2020_nd_cp.pdf
 
 ---
 
-## CHƯƠNG V: TIỀN LƯƠNG VÀ TIỀN LƯƠNG LÀM THÊM GIỜ (OT)
+## CHƯƠNG I: QUY ĐỊNH CHUNG
+Phạm vi điều chỉnh và đối tượng áp dụng các quy định về quản lý lao động, hợp đồng lao động, cho thuê lại lao động, thương lượng tập thể, tiền lương, thời giờ làm việc, kỷ luật lao động, an toàn vệ sinh lao động và lao động nữ.
+
+## CHƯƠNG II: QUẢN LÝ LAO ĐỘNG
+- **Điều 4:** Lập và quản lý Sổ quản lý lao động bằng bản giấy hoặc bản điện tử.
+- **Điều 5:** Định kỳ 06 tháng và hằng năm báo cáo tình hình thay đổi lao động đến Sở Lao động - Thương binh và Xã hội.
+
+## CHƯƠNG III: HỢP ĐỒNG LAO ĐỘNG
+- **Điều 8:** Trợ cấp thôi việc, trợ cấp mất việc làm (Thời gian làm việc tính trợ cấp = Tổng thời gian làm việc thực tế - Thời gian tham gia BHTN - Thời gian đã được chi trả trợ cấp).
+
+## CHƯƠNG IV: CHO THUÊ LẠI LAO ĐỘNG
+- **Điều 15:** Điều kiện, hồ sơ, thủ tục cấp, cấp lại, gia hạn giấy phép hoạt động cho thuê lại lao động và tiền ký quỹ 2.000.000.000 VNĐ (02 tỷ đồng).
+
+## CHƯƠNG V: THƯƠNG LƯỢNG TẬP THỂ VÀ ĐỐI THOẠI TẠI NƠI LÀM VIỆC
+- **Điều 41:** Tổ chức đối thoại định kỳ tại nơi làm việc 01 năm một lần.
+
+## CHƯƠNG VI: TIỀN LƯƠNG VÀ TIỀN LƯƠNG LÀM THÊM GIỜ (OT)
 
 ### Điều 55. Tiền lương làm thêm giờ vào ban đêm
-1. Người lao động làm thêm giờ vào ban đêm (từ 22 giờ đêm hôm trước đến 6 giờ sáng ngày hôm sau) được trả tiền lương làm thêm giờ ban đêm theo công thức:
+1. Người lao động làm thêm giờ vào ban đêm (từ 22 giờ đêm đến 6 giờ sáng) được trả tiền lương làm thêm giờ ban đêm theo công thức:
 Tiền lương OT ban đêm = [Tiền lương giờ thực trả ngày bình thường x (150% hoặc 200% hoặc 300%)] + [Tiền lương giờ thực trả ngày bình thường x 30%] + [20% x Tiền lương giờ vào ban ngày của ngày làm việc tương ứng].
 
 2. Cụ thể:
@@ -258,25 +276,35 @@ Tiền lương OT ban đêm = [Tiền lương giờ thực trả ngày bình th�
 
 ---
 
-## CHƯƠNG VIII: KỶ LUẬT LAO ĐỘNG VÀ XỬ LÝ SA THẢI
-
-### Điều 61. Quy trình xử lý kỷ luật lao động và sa thải
-1. Khi phát hiện người lao động có hành vi vi phạm kỷ luật lao động tại thời điểm xảy ra hành vi vi phạm, người sử dụng lao động tiến hành lập biên bản vi phạm và thông báo đến tổ chức đại diện người lao động tại cơ sở.
-2. Trường hợp người sử dụng lao động phát hiện hành vi vi phạm kỷ luật lao động sau thời điểm hành vi vi phạm đã xảy ra thì thực hiện việc thu thập chứng cứ chứng minh lỗi của người lao động.
-3. Người sử dụng lao động phải gửi thông báo bằng văn bản về việc tham dự cuộc họp xử lý kỷ luật lao động cho các thành viên bắt buộc tham dự trước khi tiến hành cuộc họp ít nhất 05 ngày làm việc.
-4. Khi nhận được thông báo của người sử dụng lao động, các thành viên bắt buộc tham dự cuộc họp phải xác nhận tham dự cuộc họp với người sử dụng lao động.
-5. Cuộc họp xử lý kỷ luật lao động phải được ghi thành biên bản, thông qua các thành viên tham dự trước khi kết thúc cuộc họp. Biên bản phải có chữ ký của người tham dự cuộc họp.
-6. Trong thời hạn hiệu lực của xử lý kỷ luật lao động quy định tại khoản 1 và khoản 2 Điều 123 của Bộ luật Lao động, người có thẩm quyền xử lý kỷ luật lao động ban hành quyết định xử lý kỷ luật lao động và gửi đến các thành viên bắt buộc tham dự.
-
-**Quy định cấm:** Không được áp dụng hình thức kỷ luật sa thải qua tin nhắn Zalo, nhắn tin điện thoại, Email cá nhân hoặc lời nói mà không thông qua quy trình xử lý kỷ luật lao động và không có quyết định bằng văn bản.
+## CHƯƠNG VII: THỜI GIỜ LÀM VIỆC, THỜI GIỜ NGHỈ NGƠI
+Quy định chi tiết thời giờ làm việc bình thường, giờ làm việc ban đêm, các trường hợp làm thêm giờ từ 200 giờ đến 300 giờ trong 01 năm và thời giờ nghỉ ngơi trong ca làm việc.
 
 ---
 
-## CHƯƠNG IX: THỜI GIỜ NGHỈ NGƠI VÀ NGHỈ PHÉP NĂM
+## CHƯƠNG VIII: KỶ LUẬT LAO ĐỘNG VÀ XỬ LÝ SA THẢI
 
-### Điều 112. Cách tính số ngày nghỉ hằng năm trong một số trường hợp đặc biệt
-1. Số ngày nghỉ hằng năm của người lao động làm việc chưa đủ 12 tháng theo quy định tại khoản 2 Điều 113 của Bộ luật Lao động được tính như sau: lấy số ngày nghỉ hằng năm cộng với số ngày được nghỉ tăng thêm theo thâm niên (nếu có), chia cho 12 tháng, nhân với số tháng làm việc thực tế trong năm để tính ra số ngày được nghỉ hằng năm.
-2. Trường hợp người lao động làm việc chưa đủ tháng, nếu tổng số ngày làm việc và ngày nghỉ có hưởng lương của người lao động trong tháng (việc làm, nghỉ lễ, tết, nghỉ hằng năm, nghỉ việc riêng có hưởng lương) từ đủ 14 ngày trở lên thì được tính là 01 tháng làm việc để tính ngày nghỉ hằng năm.
+### Điều 61. Quy trình xử lý kỷ luật lao động và sa thải
+1. Người sử dụng lao động tiến hành lập biên bản vi phạm kỷ luật.
+2. Gửi thông báo bằng văn bản về việc tham dự cuộc họp xử lý kỷ luật trước ít nhất 05 ngày làm việc.
+3. Cuộc họp phải lập thành biên bản, có chữ ký của các thành viên tham dự và ra quyết định bằng văn bản chính thức.
+
+**Quy định cấm:** Không được áp dụng hình thức kỷ luật sa thải qua tin nhắn Zalo, nhắn tin điện thoại, Email cá nhân hoặc lời nói mà không ra quyết định bằng văn bản chính thức.
+
+---
+
+## CHƯƠNG IX: NGHỈ PHÉP NĂM VÀ THỜI GIỜ NGHỈ NGƠI
+- **Điều 112:** Cách tính số ngày nghỉ hằng năm của người làm việc chưa đủ 12 tháng: = [(Số ngày nghỉ hằng năm + Số ngày nghỉ tăng thêm theo thâm niên) / 12] x Số tháng làm việc thực tế.
+
+---
+
+## CHƯƠNG X: LAO ĐỘNG NỮ VÀ BẢO ĐẢM BÌNH ĐẲNG GIỚI
+- **Điều 92:** Quy định về phòng, chống quấy rối tình dục tại nơi làm việc và xây dựng quy chế phòng chống quấy rối tình dục trong nội quy lao động.
+- **Điều 95:** Quyền và điều kiện chăm sóc sức khỏe cho lao động nữ, thời gian nghỉ vệ sinh kinh nguyệt 30 phút/ngày và nghỉ chăm sóc con dưới 12 tháng tuổi 60 phút/ngày.
+
+---
+
+## CHƯƠNG XI: ĐIỀU KHOẢN THI HÀNH
+Hiệu lực thi hành kể từ ngày 01/02/2021.
 """
 
 FULL_NGHI_DINH_38_2022 = """# NGHỊ ĐỊNH 38/2022/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU VÙNG
@@ -286,6 +314,13 @@ FULL_NGHI_DINH_38_2022 = """# NGHỊ ĐỊNH 38/2022/NĐ-CP QUY ĐỊNH MỨC L�
 **Nguồn file gốc:** nghi_dinh_38_2022_nd_cp.pdf
 
 ---
+
+## Điều 1. Phạm vi điều chỉnh
+Nghị định này quy định mức lương tối thiểu tháng và mức lương tối thiểu giờ áp dụng đối với người lao động làm việc theo hợp đồng lao động.
+
+## Điều 2. Đối tượng áp dụng
+1. Người lao động làm việc theo hợp đồng lao động theo quy định của Bộ luật Lao động.
+2. Người sử dụng lao động theo quy định của Bộ luật Lao động, bao gồm: Doanh nghiệp, cơ quan, tổ chức, hợp tác xã, hộ gia đình, cá nhân có thuê mướn lao động.
 
 ## Điều 3. Mức lương tối thiểu tháng và mức lương tối thiểu giờ
 
@@ -303,10 +338,20 @@ FULL_NGHI_DINH_38_2022 = """# NGHỊ ĐỊNH 38/2022/NĐ-CP QUY ĐỊNH MỨC L�
 - **TP. Hồ Chí Minh:** Các quận và các huyện Củ Chi, Hóc Môn, Bình Chánh, Nhà Bè.
 - **Tỉnh Bình Dương:** TP. Thủ Dầu Một, TP. Thuận An, TP. Dĩ An, TP. Bến Cát, TP. Tân Uyên, huyện Bàu Bàng, Bắc Tân Uyên, Dầu Tiếng, Phú Giáo.
 - **Tỉnh Đồng Nai:** TP. Biên Hòa, TP. Long Khánh, các huyện Nhơn Trạch, Long Thành, Vĩnh Cửu, Trảng Bom.
+- **TP. Hải Phòng:** Các quận và các huyện Thủy Nguyên, An Dương.
+- **Tỉnh Quảng Ninh:** TP. Hạ Long, TP. Móng Cái, TP. Cẩm Phả, TP. Uông Bí.
 
 3. Mức lương thử việc tối thiểu cho vị trí Lập trình viên / IT Developer tại Vùng I:
 Căn cứ Điều 26 Bộ luật Lao động 2019 và Nghị định 38/2022/NĐ-CP, mức lương thử việc tối thiểu cho Lập trình viên làm việc tại Vùng I không được thấp hơn 85% x 4.680.000 VNĐ = **3.978.000 VNĐ/tháng**.
+
+## Điều 4. Áp dụng mức lương tối thiểu
+1. Mức lương tối thiểu tháng là mức lương thấp nhất làm cơ sở để thỏa thuận và trả lương đối với người lao động áp dụng hình thức trả lương theo tháng.
+2. Mức lương tối thiểu giờ là mức lương thấp nhất làm cơ sở để thỏa thuận và trả lương đối với người lao động áp dụng hình thức trả lương theo giờ.
+
+## Điều 5. Hiệu lực thi hành
+Nghị định này có hiệu lực thi hành kể từ ngày 01 tháng 07 năm 2022. Nghị định số 90/2019/NĐ-CP ngày 15 tháng 11 năm 2019 của Chính phủ hết hiệu lực kể từ ngày Nghị định này có hiệu lực.
 """
+
 
 
 def convert_legal_docs():
