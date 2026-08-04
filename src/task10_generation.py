@@ -45,12 +45,12 @@ LLM_MODEL = "gpt-4o-mini"  # Sử dụng trực tiếp model của OpenAI
 # SYSTEM PROMPT
 # =============================================================================
 
-SYSTEM_PROMPT = """Bạn là trợ lý trả lời câu hỏi về dịch vụ và chính sách đại học
-(học phí, học bổng, ký túc xá, thư viện, đăng ký học phần).
+SYSTEM_PROMPT = """Bạn là chuyên gia tư vấn pháp lý và nhân sự (HR).
+Nhiệm vụ của bạn là giải đáp thắc mắc về Luật Lao động, Hợp đồng lao động, Bảo hiểm và các chính sách nhân sự.
 
 Quy tắc bắt buộc:
 1. Chỉ sử dụng thông tin từ context được cung cấp — KHÔNG bịa đặt
-2. Mỗi khẳng định phải có trích dẫn ngay sau, ví dụ: [Tuition Fees, 2026]
+2. Mỗi khẳng định phải có trích dẫn nguồn ngay sau, ví dụ: [Nghị định 145/2020] hoặc [Bộ luật Lao động 2019]
 3. Nếu context không đủ thông tin → trả lời: "Tôi không thể xác minh thông tin này từ nguồn hiện có"
 4. Trả lời bằng tiếng Việt, có cấu trúc rõ ràng theo đoạn văn
 5. Không suy luận hay mở rộng ngoài những gì được nêu trong context"""
@@ -152,20 +152,34 @@ def generate_with_citation(query: str, top_k: int = 5, chat_history: list = None
             }
         ]
         # Lọc Mock Data theo score và type
-        chunks = []
+        chunks_filtered = []
         for chunk in mock_chunks:
-            if chunk["score"] < min_score:
+            # RRF scores (từ hybrid) rất nhỏ (0.016), không nên filter bằng min_score
+            if chunk.get("source") != "hybrid" and chunk["score"] < min_score:
                 continue
             if doc_type == "Quy định/Chính sách (Legal)" and chunk["metadata"].get("type") != "pdf":
                 continue
             if doc_type == "Tin tức/Hướng dẫn (News)" and chunk["metadata"].get("type") == "pdf":
                 continue
-            chunks.append(chunk)
+            chunks_filtered.append(chunk)
             
-        chunks = chunks[:top_k]
+        chunks = chunks_filtered[:top_k]
     else:
         # Gọi hàm thật khi USE_MOCK = False
-        chunks = retrieve(query, top_k=top_k)
+        chunks_raw = retrieve(query, top_k=top_k)
+        chunks_filtered = []
+        for chunk in chunks_raw:
+            # Không dùng min_score filter cho các chunk lai (RRF score) vì điểm của chúng rất thấp (0.016)
+            if chunk.get("source") != "hybrid" and chunk["score"] < min_score:
+                continue
+            
+            if doc_type == "Quy định/Chính sách (Legal)" and chunk["metadata"].get("type") != "pdf":
+                continue
+            if doc_type == "Tin tức/Hướng dẫn (News)" and chunk["metadata"].get("type") == "pdf":
+                continue
+            chunks_filtered.append(chunk)
+            
+        chunks = chunks_filtered[:top_k]
 
     # ── Áp dụng kỹ thuật RAG theo mode được chọn ──────────────────────────
     is_basic  = "Cơ bản"  in rag_mode
@@ -175,7 +189,7 @@ def generate_with_citation(query: str, top_k: int = 5, chat_history: list = None
     if is_basic:
         # Chỉ lấy 1 đoạn đầu tiên, prompt tối giản
         chunks_to_use = chunks[:1]
-        system_prompt = "Bạn là trợ lý đại học. Trả lời ngắn gọn dựa vào tài liệu."
+        system_prompt = "Bạn là chuyên gia tư vấn HR. Trả lời ngắn gọn dựa vào tài liệu."
     elif is_hybrid:
         # Dùng tất cả chunks, prompt đầy đủ hơn, không sắp xếp lại
         chunks_to_use = chunks

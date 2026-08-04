@@ -26,8 +26,8 @@ from src.task10_generation import generate_with_citation
 # =============================================================================
 
 st.set_page_config(
-    page_title="University Services RAG Chatbot",
-    page_icon="🎓",
+    page_title="HR & Legal RAG Chatbot",
+    page_icon="⚖️",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -262,8 +262,8 @@ hr {
 # =============================================================================
 
 with st.sidebar:
-    st.markdown("## 🎓 University Services RAG")
-    st.caption("Trợ lý hỏi đáp về dịch vụ và chính sách đại học")
+    st.markdown("## ⚖️ HR & Legal RAG")
+    st.caption("Trợ lý hỏi đáp về Luật Lao động, Hợp đồng & Nhân sự")
 
     # Status indicator
     st.markdown("""
@@ -303,11 +303,11 @@ with st.sidebar:
 
     st.markdown("#### 💡 Câu hỏi gợi ý")
     suggestions = [
-        "Học phí tại RMIT Vietnam là bao nhiêu?",
-        "Làm sao để đặt phòng học nhóm ở thư viện?",
-        "Điều kiện xin học bổng Academic Achievement?",
-        "Dịch vụ hỗ trợ chỗ ở cho sinh viên như thế nào?",
-        "Cách đăng ký học phần qua myRMIT?",
+        "Tiền lương làm thêm giờ vào ngày lễ được tính như thế nào?",
+        "Thời gian thử việc tối đa đối với người quản lý doanh nghiệp là bao lâu?",
+        "Doanh nghiệp có được sa thải nhân viên nữ vì lý do kết hôn không?",
+        "Hợp đồng lao động 1 tháng có bắt buộc phải đóng Bảo hiểm Xã hội không?",
+        "Người lao động được nghỉ bao nhiêu ngày phép năm nếu làm đủ 12 tháng?",
     ]
     for s in suggestions:
         if st.button(s, use_container_width=True, key=f"sug_{s[:20]}"):
@@ -329,10 +329,10 @@ if "pending_query" not in st.session_state:
 # Title with gradient
 st.markdown("""
 <div class="main-title">
-    <h1>🎓 University Services RAG Chatbot</h1>
+    <h1>⚖️ HR & Legal RAG Chatbot</h1>
 </div>
 <div class="main-subtitle">
-    Hệ thống hỏi đáp thông minh về dịch vụ đại học — Học phí · Học bổng · Ký túc xá · Thư viện
+    Hệ thống hỏi đáp thông minh về Nhân sự & Pháp lý — Bộ luật Lao động · Hợp đồng · BHXH
 </div>
 """, unsafe_allow_html=True)
 
@@ -370,7 +370,7 @@ for msg in st.session_state.messages:
 # =============================================================================
 
 # Xử lý khi bấm nút gợi ý hoặc nhập câu hỏi mới
-user_input = st.chat_input("Nhập câu hỏi của bạn về chính sách/dịch vụ đại học...")
+user_input = st.chat_input("Nhập câu hỏi của bạn về Luật Lao động, Hợp đồng, BHXH...")
 query = user_input or st.session_state.pending_query
 
 if query:
