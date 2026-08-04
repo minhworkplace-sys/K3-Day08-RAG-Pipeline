@@ -131,7 +131,7 @@ def generate_with_citation(query: str, top_k: int = 5, chat_history: list = None
         
     # MOCK DATA: Giả lập hàm retrieve vì Task 9 (Role 4) chưa xong
     # Khi nào Role 4 làm xong, bạn đổi cờ USE_MOCK = False là sẽ chạy thật
-    USE_MOCK = True
+    USE_MOCK = False
     
     if USE_MOCK:
         mock_chunks = [
