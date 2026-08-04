@@ -13,5 +13,90 @@
     "question": "Trường có cung cấp ký túc xá trong khuôn viên không?",
     "expected_answer": "Không — trường không cung cấp chỗ ở trong khuôn viên, nhưng có đội ngũ hỗ trợ sinh viên tìm chỗ ở gần trường.",
     "expected_context": "Trang Accommodation Services"
+  },
+  {
+    "question": "Làm thế nào để đặt phòng học nhóm ở thư viện?",
+    "expected_answer": "Sử dụng ứng dụng LibraryBooking để đặt phòng học nhóm theo hướng dẫn trên trang thư viện.",
+    "expected_context": "Huong_dan_thu_vien.pdf"
+  },
+  {
+    "question": "Sinh viên quốc tế có học bổng nào?",
+    "expected_answer": "Học bổng Academic Achievement giảm 20% học phí cho sinh viên quốc tế.",
+    "expected_context": "Chinh_sach_hoc_bong.pdf"
+  },
+  {
+    "question": "Sinh viên đóng học phí trước hạn có được giảm không?",
+    "expected_answer": "Có — đóng trước hạn được giảm 5% theo quy định học phí.",
+    "expected_context": "Quy_dinh_hoc_phi.pdf"
+  },
+  {
+    "question": "Thực tập sinh có được trả lương không?",
+    "expected_answer": "Nếu thực tập sinh tham gia tạo ra sản phẩm hoặc doanh thu thì được coi là thử việc hoặc làm việc và phải được trả ít nhất 85% lương theo quy định.",
+    "expected_context": "Thuc_tap_sinh_co_duoc_tra_luong_khong"
+  },
+  {
+    "question": "Số ngày nghỉ phép năm cơ bản là bao nhiêu?",
+    "expected_answer": "12 ngày làm việc mỗi năm cho người làm việc trong điều kiện bình thường.",
+    "expected_context": "Quy_dinh_ve_nghi_phep_nam"
+  },
+  {
+    "question": "Thời gian thử việc cho vị trí lập trình viên là bao lâu?",
+    "expected_answer": "Thời gian thử việc là 02 tháng (60 ngày) cho vị trí lập trình viên theo hợp đồng mẫu.",
+    "expected_context": "Hop_Dong_Lao_Dong_Mau"
+  },
+  {
+    "question": "Mức lương thử việc thường là bao nhiêu phần trăm?",
+    "expected_answer": "Mức lương thử việc thường bằng 85% mức lương chính thức ghi trong hợp đồng.",
+    "expected_context": "Hop_Dong_Lao_Dong_Mau"
+  },
+  {
+    "question": "Cách tính tiền làm thêm giờ theo quy định?",
+    "expected_answer": "Tiền làm thêm giờ: ngày thường ít nhất 150% lương; cuối tuần 200%; ngày lễ 300%.",
+    "expected_context": "Bo_luat_lao_dong_2019"
+  },
+  {
+    "question": "Khi nào người lao động được hưởng nghỉ phép năm đầy đủ?",
+    "expected_answer": "Khi làm việc đủ 12 tháng cho một người sử dụng lao động sẽ được nghỉ hằng năm hưởng nguyên lương.",
+    "expected_context": "Quy_dinh_ve_nghi_phep_nam"
+  },
+  {
+    "question": "Hợp đồng lao động cần được lập thành mấy bản?",
+    "expected_answer": "Hợp đồng lao động phải được giao kết bằng văn bản và làm thành 02 bản; mỗi bên giữ 01 bản.",
+    "expected_context": "Bo_luat_lao_dong_2019"
+  },
+  {
+    "question": "Công ty có thể sa thải nhân viên qua tin nhắn Zalo không?",
+    "expected_answer": "Không — sa thải phải tuân theo quy định pháp luật và không được thực hiện qua tin nhắn cá nhân mà không có thông báo bằng văn bản và thủ tục.",
+    "expected_context": "Hop_Dong_Lao_Dong_Mau"
+  },
+  {
+    "question": "Ai chịu trách nhiệm giải quyết việc làm?",
+    "expected_answer": "Nhà nước, người sử dụng lao động và xã hội chịu trách nhiệm giải quyết việc làm.",
+    "expected_context": "Bo_luat_lao_dong_2019"
+  },
+  {
+    "question": "Hồ sơ cần thiết để xin hỗ trợ chỗ ở sinh viên?",
+    "expected_answer": "Trường không cung cấp ký túc xá nhưng có đội ngũ hỗ trợ; hồ sơ và thủ tục được hướng dẫn trên trang Accommodation Services.",
+    "expected_context": "Accommodation Services"
+  },
+  {
+    "question": "Sinh viên đóng học phí bằng hình thức nào?",
+    "expected_answer": "Thanh toán theo từng học kỳ, có thể thanh toán online hoặc qua ngân hàng theo hướng dẫn của trường.",
+    "expected_context": "Tuition Fees"
+  },
+  {
+    "question": "Học bổng Academic Achievement áp dụng cho ai?",
+    "expected_answer": "Áp dụng cho sinh viên quốc tế có thành tích học tập, giảm 20% học phí.",
+    "expected_context": "Chinh_sach_hoc_bong.pdf"
+  },
+  {
+    "question": "Làm sao để biết lịch đóng học phí từng học kỳ?",
+    "expected_answer": "Lịch đóng học phí được công bố trong trang Tuition Fees và thông báo sinh viên trước mỗi học kỳ.",
+    "expected_context": "Tuition Fees"
+  },
+  {
+    "question": "Sinh viên cần liên hệ ai khi có thắc mắc về hợp đồng lao động?",
+    "expected_answer": "Liên hệ phòng nhân sự của đơn vị tuyển dụng hoặc bộ phận hỗ trợ sinh viên để được hướng dẫn.",
+    "expected_context": "Hop_Dong_Lao_Dong_Mau"
   }
 ]
