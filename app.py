@@ -118,9 +118,13 @@ if query:
                 # answer = response["answer"]
                 # sources = response.get("sources", [])
 
-                # Tạm thời mockup để test UI:
+                # Tạm thời mockup để test UI (chuyển sang code gọi hàm thật):
                 from src.task10_generation import generate_with_citation
-                response = generate_with_citation(query, top_k=top_k)
+                
+                # Truyền lịch sử chat vào để LLM có context hội thoại
+                chat_history = st.session_state.messages[:-1] # Bỏ tin nhắn user vừa gửi
+                response = generate_with_citation(query, top_k=top_k, chat_history=chat_history)
+                
                 answer = response.get("answer", "Chưa thể trả lời.")
                 sources = response.get("sources", [])
 
