@@ -115,36 +115,26 @@ def format_context(chunks: list[dict]) -> str:
 # GENERATION
 # =============================================================================
 
-def generate_with_citation(query: str, top_k: int = TOP_K, chat_history: list = None) -> dict:
+def generate_with_citation(query: str, top_k: int = 5, chat_history: list = None, min_score: float = 0.0, doc_type: str = "Tất cả") -> dict:
     """
     End-to-end RAG generation có citation.
-
+    
     Pipeline:
-        1. Retrieve relevant chunks
-        2. Reorder để tránh lost in the middle
-        3. Format context với source labels
-        4. Build prompt (system + context + query)
-        5. Call LLM
-        6. Return answer + sources
-
-    Args:
-        query: Câu hỏi của user
-        top_k: Số lượng tài liệu cần truy xuất
-        chat_history: Lịch sử tin nhắn để LLM nhớ bối cảnh (Format của Streamlit)
-
-    Returns:
-        {
-            'answer': str,           # Câu trả lời có citation
-            'sources': list[dict],   # Các chunks đã dùng
-            'retrieval_source': str  # 'hybrid' hoặc 'pageindex'
-        }
+        1. Gọi retrieve(query) lấy top_k chunks
+        2. Nếu không có context -> fallback "I cannot answer..."
+        3. Sắp xếp lại context (reorder)
+        4. Format context thành text
+        5. Gọi LLM (OpenAI API qua OpenRouter/OpenAI) trả về JSON
     """
+    if chat_history is None:
+        chat_history = []
+        
     # MOCK DATA: Giả lập hàm retrieve vì Task 9 (Role 4) chưa xong
     # Khi nào Role 4 làm xong, bạn đổi cờ USE_MOCK = False là sẽ chạy thật
     USE_MOCK = True
     
     if USE_MOCK:
-        chunks = [
+        mock_chunks = [
             {
                 "content": "Học phí học kỳ 1 năm 2026 tại RMIT là 30 triệu VND. Sinh viên đóng trước hạn được giảm 5%.", 
                 "metadata": {"source": "Quy_dinh_hoc_phi.pdf", "year": "2026", "type": "pdf"},
@@ -161,12 +151,21 @@ def generate_with_citation(query: str, top_k: int = TOP_K, chat_history: list = 
                 "score": 0.65
             }
         ]
-        # Lọc thô sơ theo keyword để giả lập search
-        chunks = [c for c in chunks if any(word.lower() in c['content'].lower() for word in query.split())]
-        if not chunks:
-            chunks = [{"content": "Không có thông tin về vấn đề này trong cơ sở dữ liệu.", "metadata": {"source": "Trống"}, "score": 0}]
+        # Lọc Mock Data theo score và type
+        chunks = []
+        for chunk in mock_chunks:
+            if chunk["score"] < min_score:
+                continue
+            if doc_type == "Quy định/Chính sách (Legal)" and chunk["metadata"].get("type") != "pdf":
+                continue
+            if doc_type == "Tin tức/Hướng dẫn (News)" and chunk["metadata"].get("type") == "pdf":
+                continue
+            chunks.append(chunk)
+            
+        chunks = chunks[:top_k]
     else:
-        # Chạy thật hàm retrieve của Task 9
+        # Gọi hàm thật khi USE_MOCK = False
+        # Bạn sẽ phải nhờ Role 4 update hàm retrieve để nhận thêm biến min_score và doc_type
         chunks = retrieve(query, top_k=top_k)
 
     # Step 2: Reorder
