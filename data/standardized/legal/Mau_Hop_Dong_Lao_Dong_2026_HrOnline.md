@@ -128,6 +128,51 @@ Lưu ý: Hợp đồng này có thể được chuyển đổi sang hợp đồn
 Nghị định 337/2025/NĐ-CP khi hai bên đồng ý.
 NGƯỜI SỬ DỤNG LAO ĐỘNG NGƯỜI LAO ĐỘNG
 (Ký tên, đóng dấu) (Ký và ghi rõ họ tên)
+………………………………………… ………………………………
+Mẫu hợp đồng lao động này được cung cấp miễn phí bởi HrOnline.vn — Phần mềm quản lý nhân sự toàn diện cho
+doanh nghiệp Việt Nam.
+ụ cần thiết;
+b) Được trả lương đầy đủ, đúng hạn theo thỏa thuận;
+c) Được hưởng các chế độ bảo hiểm, nghỉ phép, nghỉ lễ theo quy định;
+d) Được đào tạo, bồi dưỡng nâng cao trình độ chuyên môn;
+e) Các quyền khác theo quy định của pháp luật lao động.
+6.2. Nghĩa vụ của Bên B:
+a) Thực hiện đầy đủ công việc được giao theo hợp đồng;
+b) Chấp hành nội quy, quy chế của đơn vị;
+c) Bảo mật thông tin kinh doanh, bí mật công nghệ của Bên A;
+d) Bồi thường thiệt hại nếu vi phạm quy định gây tổn thất cho Bên A.
+ĐIỀU 7: QUYỀN VÀ NGHĨA VỤ CỦA NGƯỜI SỬ DỤNG LAO ĐỘNG
+7.1. Quyền của Bên A:
+a) Điều hành, quản lý và phân công công việc cho Bên B;
+b) Khen thưởng và xử lý vi phạm kỷ luật lao động theo quy chế và pháp luật;
+c) Tạm hoãn, chấm dứt hợp đồng lao động theo quy định.
+7.2. Nghĩa vụ của Bên A:
+a) Bảo đảm việc làm và thực hiện đầy đủ các điều khoản trong hợp đồng;
+b) Trả lương đầy đủ, đúng hạn; đóng bảo hiểm đầy đủ cho Bên B;
+c) Đảm bảo điều kiện an toàn lao động, vệ sinh lao động;
+d) Thực hiện đúng quy định pháp luật về lao động.
+
+---
+
+## Trang 4
+
+ĐIỀU 8: CHẤM DỨT HỢP ĐỒNG LAO ĐỘNG
+8.1. Hợp đồng lao động chấm dứt theo quy định tại Điều 34 Bộ luật Lao động 2019.
+8.2. Thời hạn báo trước khi đơn phương chấm dứt hợp đồng thực hiện theo Điều 35, Điều 36 Bộ
+luật Lao động 2019.
+8.3. Trợ cấp thôi việc, trợ cấp mất việc làm (nếu có) thực hiện theo Điều 46, Điều 47 Bộ luật Lao
+động 2019.
+ĐIỀU 9: ĐIỀU KHOẢN THI HÀNH
+9.1. Hợp đồng này có hiệu lực kể từ ngày ký.
+9.2. Hợp đồng được lập thành 02 bản có giá trị pháp lý như nhau, mỗi bên giữ 01 bản.
+9.3. Những vấn đề không quy định trong hợp đồng này được thực hiện theo quy định của pháp
+luật lao động hiện hành và nội quy, quy chế của Bên A.
+9.4. Mọi sửa đổi, bổ sung hợp đồng phải được hai bên thỏa thuận bằng văn bản (hoặc phụ lục
+hợp đồng).
+Lưu ý: Hợp đồng này có thể được chuyển đổi sang hợp đồng lao động điện tử theo quy định tại
+Nghị định 337/2025/NĐ-CP khi hai bên đồng ý.
+NGƯỜI SỬ DỤNG LAO ĐỘNG NGƯỜI LAO ĐỘNG
+(Ký tên, đóng dấu) (Ký và ghi rõ họ tên)
 ……………………………… ………………………………
 Mẫu hợp đồng lao động này được cung cấp miễn phí bởi HrOnline.vn — Phần mềm quản lý nhân sự toàn diện cho
 doanh nghiệp Việt Nam.
