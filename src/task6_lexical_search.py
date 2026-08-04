@@ -16,9 +16,59 @@ BM25 hoạt động thế nào:
 """
 
 from pathlib import Path
+import unicodedata
+import numpy as np
+from rank_bm25 import BM25Okapi
 
-# TODO: Load corpus từ data/standardized/ hoặc từ vector store
-CORPUS: list[dict] = []  # List of {'content': str, 'metadata': dict}
+STANDARDIZED_DIR = Path(__file__).parent.parent / "data" / "standardized"
+
+
+def remove_accents(text: str) -> str:
+    """Remove Vietnamese accents from text for unaccented matching."""
+    text = unicodedata.normalize('NFD', text)
+    text = ''.join(c for c in text if unicodedata.category(c) != 'Mn')
+    return unicodedata.normalize('NFC', text)
+
+
+def tokenize(text: str) -> list[str]:
+    """Tokenize text into lowercase words, including both accented and unaccented variants."""
+    text_lower = text.lower()
+    text_no_acc = remove_accents(text_lower)
+    return text_lower.split() + text_no_acc.split()
+
+
+QUERY_MAPPINGS = {
+    "tuition": ["học", "phí", "phi", "chi phí", "lương"],
+    "fee": ["phí", "phi", "chi phí", "lệ phí"],
+    "payment": ["thanh toán", "trả", "nộp"],
+    "scholarship": ["học bổng", "trợ cấp"],
+    "eligibility": ["điều kiện", "tiêu chuẩn"],
+    "library": ["thư viện", "tài liệu"],
+    "study": ["học", "học tập", "thực tập"],
+    "room": ["phòng"],
+}
+
+
+def load_corpus() -> list[dict]:
+    """Load corpus from data/standardized/ files and split into chunks/paragraphs."""
+    documents = []
+    if STANDARDIZED_DIR.exists():
+        for md_file in STANDARDIZED_DIR.rglob("*.md"):
+            content = md_file.read_text(encoding="utf-8").strip()
+            if not content:
+                continue
+            doc_type = "legal" if "legal" in str(md_file) else "news"
+            paragraphs = [p.strip() for p in content.split("\n\n") if p.strip()]
+            for i, p in enumerate(paragraphs):
+                documents.append({
+                    "content": p,
+                    "metadata": {"source": md_file.name, "type": doc_type, "chunk_index": i}
+                })
+    return documents
+
+
+CORPUS: list[dict] = load_corpus()
+BM25_INDEX = None
 
 
 def build_bm25_index(corpus: list[dict]):
@@ -28,15 +78,13 @@ def build_bm25_index(corpus: list[dict]):
     Args:
         corpus: List of {'content': str, 'metadata': dict}
     """
-    # TODO: Implement BM25 index
-    #
-    # from rank_bm25 import BM25Okapi
-    #
-    # # Tokenize - có thể đơn giản split(), hoặc dùng underthesea cho tiếng Việt
-    # tokenized_corpus = [doc["content"].lower().split() for doc in corpus]
-    # bm25 = BM25Okapi(tokenized_corpus)
-    # return bm25
-    raise NotImplementedError("Implement build_bm25_index")
+    if not corpus:
+        return None
+    tokenized_corpus = [tokenize(doc["content"]) for doc in corpus]
+    return BM25Okapi(tokenized_corpus)
+
+
+BM25_INDEX = build_bm25_index(CORPUS)
 
 
 def lexical_search(query: str, top_k: int = 10) -> list[dict]:
@@ -55,29 +103,38 @@ def lexical_search(query: str, top_k: int = 10) -> list[dict]:
         }
         Sorted by score descending.
     """
-    # TODO: Implement lexical search
-    #
-    # tokenized_query = query.lower().split()
-    # scores = bm25.get_scores(tokenized_query)
-    #
-    # # Get top_k indices
-    # import numpy as np
-    # top_indices = np.argsort(scores)[::-1][:top_k]
-    #
-    # results = []
-    # for idx in top_indices:
-    #     if scores[idx] > 0:
-    #         results.append({
-    #             "content": CORPUS[idx]["content"],
-    #             "score": float(scores[idx]),
-    #             "metadata": CORPUS[idx]["metadata"]
-    #         })
-    # return results
-    raise NotImplementedError("Implement lexical_search")
+    global CORPUS, BM25_INDEX
+    if not CORPUS:
+        CORPUS = load_corpus()
+        BM25_INDEX = build_bm25_index(CORPUS)
+
+    if not CORPUS or BM25_INDEX is None:
+        return []
+
+    tokens = tokenize(query)
+    for word in query.lower().split():
+        if word in QUERY_MAPPINGS:
+            for mapped in QUERY_MAPPINGS[word]:
+                tokens.extend(tokenize(mapped))
+
+    scores = BM25_INDEX.get_scores(tokens)
+
+    top_indices = np.argsort(scores)[::-1][:top_k]
+
+    results = []
+    for idx in top_indices:
+        results.append({
+            "content": CORPUS[idx]["content"],
+            "score": float(scores[idx]),
+            "metadata": CORPUS[idx]["metadata"]
+        })
+    return results
 
 
 if __name__ == "__main__":
     # Test
-    results = lexical_search("tuition fee payment methods", top_k=5)
+    results = lexical_search("tuition fee", top_k=5)
     for r in results:
         print(f"[{r['score']:.3f}] {r['content'][:100]}...")
+
+
