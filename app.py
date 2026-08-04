@@ -284,6 +284,21 @@ with st.sidebar:
     
     min_score = st.slider("Độ tin cậy tối thiểu (Score)", 0.0, 1.0, 0.3, 0.05)
 
+    st.markdown("#### 🔬 Kỹ thuật RAG")
+    rag_mode = st.selectbox(
+        "Chọn chiến lược tìm kiếm",
+        ["⚡ Cơ bản (Top-K only)", "🔀 Hybrid Search (Semantic + BM25)", "🏆 Hybrid + Rerank (Tối ưu)"],
+        index=2,
+        help="Kỹ thuật càng cao → câu trả lời càng chính xác và có nguồn trích dẫn rõ ràng hơn"
+    )
+    # Hiện mô tả ngắn bên dưới
+    mode_desc = {
+        "⚡ Cơ bản (Top-K only)": "🟡 Tìm theo từ khóa đơn giản, không sắp xếp lại kết quả.",
+        "🔀 Hybrid Search (Semantic + BM25)": "🟠 Kết hợp tìm kiếm ngữ nghĩa + từ khóa BM25, bao phủ rộng hơn.",
+        "🏆 Hybrid + Rerank (Tối ưu)": "🟢 Sắp xếp lại kết quả theo mức độ liên quan + trích dẫn nguồn đầy đủ.",
+    }
+    st.caption(mode_desc[rag_mode])
+
     st.divider()
 
     st.markdown("#### 💡 Câu hỏi gợi ý")
@@ -367,8 +382,14 @@ if query:
         st.markdown(query)
 
     # Sinh câu trả lời từ RAG Pipeline
+    spinner_msg = {
+        "⚡ Cơ bản (Top-K only)": "⚡ Đang tìm kiếm cơ bản...",
+        "🔀 Hybrid Search (Semantic + BM25)": "🔀 Đang chạy Hybrid Search...",
+        "🏆 Hybrid + Rerank (Tối ưu)": "🏆 Đang Rerank và tổng hợp câu trả lời tối ưu...",
+    }.get(rag_mode, "🔍 Đang tìm kiếm...")
+
     with st.chat_message("assistant"):
-        with st.spinner("🔍 Đang tìm kiếm tài liệu và tổng hợp câu trả lời..."):
+        with st.spinner(spinner_msg):
             try:
                 # Truyền lịch sử chat vào để LLM có context hội thoại
                 chat_history = st.session_state.messages[:-1]  # Bỏ tin nhắn user vừa gửi
@@ -377,7 +398,8 @@ if query:
                     top_k=top_k, 
                     chat_history=chat_history,
                     min_score=min_score,
-                    doc_type=doc_type
+                    doc_type=doc_type,
+                    rag_mode=rag_mode
                 )
 
                 answer = response.get("answer", "Chưa thể trả lời.")

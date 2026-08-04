@@ -115,7 +115,7 @@ def format_context(chunks: list[dict]) -> str:
 # GENERATION
 # =============================================================================
 
-def generate_with_citation(query: str, top_k: int = 5, chat_history: list = None, min_score: float = 0.0, doc_type: str = "Tất cả") -> dict:
+def generate_with_citation(query: str, top_k: int = 5, chat_history: list = None, min_score: float = 0.0, doc_type: str = "Tất cả", rag_mode: str = "🏆 Hybrid + Rerank (Tối ưu)") -> dict:
     """
     End-to-end RAG generation có citation.
     
@@ -165,26 +165,42 @@ def generate_with_citation(query: str, top_k: int = 5, chat_history: list = None
         chunks = chunks[:top_k]
     else:
         # Gọi hàm thật khi USE_MOCK = False
-        # Bạn sẽ phải nhờ Role 4 update hàm retrieve để nhận thêm biến min_score và doc_type
         chunks = retrieve(query, top_k=top_k)
 
-    # Step 2: Reorder
-    reordered = reorder_for_llm(chunks)
+    # ── Áp dụng kỹ thuật RAG theo mode được chọn ──────────────────────────
+    is_basic  = "Cơ bản"  in rag_mode
+    is_hybrid = "Hybrid Search" in rag_mode and "Rerank" not in rag_mode
+    is_rerank = "Rerank"  in rag_mode
+
+    if is_basic:
+        # Chỉ lấy 1 đoạn đầu tiên, prompt tối giản
+        chunks_to_use = chunks[:1]
+        system_prompt = "Bạn là trợ lý đại học. Trả lời ngắn gọn dựa vào tài liệu."
+    elif is_hybrid:
+        # Dùng tất cả chunks, prompt đầy đủ hơn, không sắp xếp lại
+        chunks_to_use = chunks
+        system_prompt = SYSTEM_PROMPT
+    else:  # Hybrid + Rerank (Tối ưu)
+        # Sắp xếp lại và dùng toàn bộ prompt tối ưu với citation
+        chunks_to_use = reorder_for_llm(chunks)
+        system_prompt = SYSTEM_PROMPT
 
     # Step 3: Format context
-    context = format_context(reordered)
+    context = format_context(chunks_to_use)
 
     # Step 4: Build prompt & History
-    user_message = f"""Context:\n{context}\n\n---\n\nQuestion: {query}"""
-    
-    messages = [{"role": "system", "content": SYSTEM_PROMPT}]
-    
-    # Nạp lịch sử hội thoại (nếu có)
-    if chat_history:
-        for msg in chat_history[-4:]: # Giới hạn nhớ 4 tin nhắn gần nhất
-            messages.append({"role": msg["role"], "content": msg["content"]})
-            
-    messages.append({"role": "user", "content": user_message})
+    if is_basic:
+        # Prompt đơn giản, không có history
+        user_message = f"Tài liệu: {context}\n\nCâu hỏi: {query}"
+        messages = [{"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_message}]
+    else:
+        user_message = f"""Context:\n{context}\n\n---\n\nQuestion: {query}"""
+        messages = [{"role": "system", "content": system_prompt}]
+        if chat_history:
+            for msg in chat_history[-4:]:
+                messages.append({"role": msg["role"], "content": msg["content"]})
+        messages.append({"role": "user", "content": user_message})
 
     # Step 5: Call LLM (OpenRouter — OpenAI-compatible API)
     from openai import OpenAI
@@ -210,7 +226,7 @@ def generate_with_citation(query: str, top_k: int = 5, chat_history: list = None
     # Step 6: Return
     return {
         "answer": answer,
-        "sources": chunks,
+        "sources": chunks_to_use,
         "retrieval_source": "mock_data" if USE_MOCK else (chunks[0].get("metadata", {}).get("source", "hybrid") if chunks else "none")
     }
 
